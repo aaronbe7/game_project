@@ -18,8 +18,17 @@ let winner;
 
 const slotsEl = {
     slot_1: {
-        imgEl: document.querySelector('slot1-result img')
-    }
+        imgEl: document.querySelector('slot1-result img'),
+    },
+    slot_2: {
+        imgEl: document.querySelector('slot1-result img'),
+    },
+    slot_3: {
+        imgEl: document.querySelector('slot1-result img'),
+    },
+    slot_4: {
+        imgEl: document.querySelector('slot1-result img'),
+    },
 }
 
 /*----- event listeners -----*/
@@ -27,6 +36,8 @@ const slotsEl = {
 document.querySelector('button').addEventListener('click', playGame);
 
 init();
+
+
 
 function init(){
 
