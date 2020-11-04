@@ -16,6 +16,19 @@ div {
     padding-bottom: 40px;
 }
 
+h3 {
+    display: inline-block;
+    width: 100px;
+    border: 4px solid #505050;
+    color: #5a5f6b;
+    background-color: white;
+    text-align: left;
+    margin-right: 548px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    margin-top: -30px;
+    }
+
 #heading1 {
     font-size: 62px;
     border: #FFE5D8;
