@@ -1,6 +1,6 @@
 /*----- constants -----*/
 
-const slotImages = {
+const slotOptions = {
     coin: 'imgs/number_1.png',
     dollar: 'imgs/number_2.png',
     seven: 'imgs/number_3.png',
@@ -16,24 +16,15 @@ let winner;
 /*----- cached element references -----*/
 
 const slotsEl = {
-    slot_1: {
-        imgEl: document.querySelector('#slot1-result img'),
-    },
-    slot_2: {
-        imgEl: document.querySelector('#slot2-result img'),
-    },
-    slot_3: {
-        imgEl: document.querySelector('#slot3-result img'),
-    },
-    slot_4: {
-        imgEl: document.querySelector('#slot4-result img'),
-    },
+    slot_1: document.querySelector('#slot1-result img'),
+    slot_2: document.querySelector('#slot2-result img'),
+    slot_3: document.querySelector('#slot3-result img'),
+    slot_4: document.querySelector('#slot4-result img'),
 }
 
 const bankEls = {
     money: document.getElementById('bank'),
 };
-
 /*----- event listeners -----*/
 
 document.querySelector('button').addEventListener('click', playGame);
@@ -67,13 +58,11 @@ function render(){
     }
 
     for (let slot in slots){
-        slotsEl[slot].imgEl.src = slotImages[slots[slot]];
+        slotsEl[slot].src = slotOptions[slots[slot]];
     }
 
     return bank;
 }
-
-/*----- functions -----*/
 
 function playGame(){
     slots.slot_1 = getRandomSlot();
