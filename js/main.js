@@ -12,19 +12,22 @@ const slotOptions = {
 let slots;
 let bank;
 let winner;
+let result;
 
 /*----- cached element references -----*/
 
-const slotsEl = {
+const slotEls = {
     slot_1: document.querySelector('#slot1-result img'),
     slot_2: document.querySelector('#slot2-result img'),
     slot_3: document.querySelector('#slot3-result img'),
     slot_4: document.querySelector('#slot4-result img'),
 }
 
-const bankEls = {
-    money: document.getElementById('bank'),
-};
+const bankEl = document.getElementById('bank');
+
+const resultEl = document.getElementById('winLose');
+
+
 /*----- event listeners -----*/
 
 document.querySelector('button').addEventListener('click', playGame);
@@ -40,28 +43,37 @@ function init(){
     }
     
     bank = 0;
+    result = 'RESULTS';
     winner = null;
 
     render();
 }
 
 function render(){
-    
-    bankEls.money.innerText = '$' + bank;
+
+    bankEl.innerText = '$' + bank;
+    resultEl.innerText = result;
+
+    if (result === 'YOU WIN!'){
+        resultEl.style.backgroundColor = '#C7FFDE';
+    } else if (result === 'YOU LOSE!'){
+        resultEl.style.backgroundColor = '#FFD1D1';
+    } else {
+        resultEl.style.backgroundColor = 'white';
+
+    }
 
     if (bank >= 0){
-        bankEls.money.style.color = 'green';
-        bankEls.money.style.backgroundColor = '#C7FFDE';
+        bankEl.style.color = 'green';
+        bankEl.style.backgroundColor = '#C7FFDE';
     } else {
-        bankEls.money.style.color = 'red';
-        bankEls.money.style.backgroundColor = '#FFD1D1';
+        bankEl.style.color = 'red';
+        bankEl.style.backgroundColor = '#FFD1D1';
     }
 
     for (let slot in slots){
-        slotsEl[slot].src = slotOptions[slots[slot]];
+        slotEls[slot].src = slotOptions[slots[slot]];
     }
-
-    return bank;
 }
 
 function playGame(){
@@ -85,9 +97,11 @@ function playGame(){
     }
 
     if (winner === true){
-        bank = bank + 400;
+        bank = bank + 300;
+        result = 'YOU WIN!';
     } else {
         bank = bank - 100;
+        result = 'YOU LOSE!';
     }
 
     render();

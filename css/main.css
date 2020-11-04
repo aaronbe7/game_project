@@ -12,8 +12,8 @@ div {
     margin-bottom: 80px;
     background-color: #FFF5D0;
     overflow: hidden;
-    color: #FF7A58; 
-    padding-bottom: 40px;
+    color: #FF5521; 
+    padding-bottom: 20px;
 }
 
 h3 {
@@ -69,4 +69,13 @@ button:hover {
     background-color: #76BAA4;
 }
 
+#winLose {
+    display: inline-block;
+    width: 100px;
+    border: 3px solid #505050;
+    color: #5a5f6b;
+    background-color: white;
+    border-radius: 3px;
+    margin: -5px 0px -10px 0px;
+}
 
