@@ -16,5 +16,5 @@ Test your odds with this simplified, virtual version of a real slot machine.
 * JavaScript
 
 # Next Steps
-I would make the slot machine more visually interesting (e.g., slots spin when the button is clicked, each slot is separately aretly chosen from left to right). 
+I would make the slot machine more visually interesting (e.g., slots spin when the button is clicked, each slot is separately chosen from left to right). 
 
