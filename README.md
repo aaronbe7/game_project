@@ -1,7 +1,7 @@
 # Virtual Slot Machine
 SEI Project 01
 
-Play Game: https://aaronbe7.github.io/game_project/
+Play Game: https://aaronbe7.github.io/game_project_slot_machine/
 
 # Game Description
 Test your odds with this simplified, virtual version of a real slot machine. 
