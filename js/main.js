@@ -1,36 +1,26 @@
-/*----- constants -----*/
-
 const slotOptions = {
-    coin: 'imgs/number_1.png',
-    dollar: 'imgs/number_2.png',
-    seven: 'imgs/number_3.png',
-    key: 'imgs/number_4.png',
+    coin: "imgs/number_1.png",
+    dollar: "imgs/number_2.png",
+    seven: "imgs/number_3.png",
+    key: "imgs/number_4.png",
 }
-
-/*----- app's state (variables) -----*/
 
 let slots;
 let bank;
-let winner;
 let result;
-
-/*----- cached element references -----*/
+let winner;
 
 const slotEls = {
-    slot_1: document.querySelector('#slot1-result img'),
-    slot_2: document.querySelector('#slot2-result img'),
-    slot_3: document.querySelector('#slot3-result img'),
-    slot_4: document.querySelector('#slot4-result img'),
+    slot_1: document.querySelector("#slot1-result img"),
+    slot_2: document.querySelector("#slot2-result img"),
+    slot_3: document.querySelector("#slot3-result img"),
+    slot_4: document.querySelector("#slot4-result img"),
 }
 
-const bankEl = document.getElementById('bank');
+const bankEl = document.getElementById("bank");
+const resultEl = document.getElementById("winLose");
 
-const resultEl = document.getElementById('winLose');
-
-
-/*----- event listeners -----*/
-
-document.querySelector('button').addEventListener('click', playGame);
+document.querySelector("button").addEventListener("click", playGame);
 
 init();
 
@@ -43,7 +33,7 @@ function init(){
     }
     
     bank = 0;
-    result = 'RESULTS';
+    result = "RESULTS";
     winner = null;
 
     render();
@@ -51,24 +41,24 @@ function init(){
 
 function render(){
 
-    bankEl.innerText = '$' + bank;
+    bankEl.innerText = "$" + bank;
     resultEl.innerText = result;
 
-    if (result === 'YOU WIN!'){
-        resultEl.style.backgroundColor = '#C7FFDE';
-    } else if (result === 'YOU LOSE!'){
-        resultEl.style.backgroundColor = '#FFD1D1';
+    if (result === "YOU WIN!"){
+        resultEl.style.backgroundColor = "#C7FFDE";
+    } else if (result === "YOU LOSE!"){
+        resultEl.style.backgroundColor = "#FFD1D1";
     } else {
-        resultEl.style.backgroundColor = 'white';
+        resultEl.style.backgroundColor = "white";
 
     }
 
     if (bank >= 0){
-        bankEl.style.color = 'green';
-        bankEl.style.backgroundColor = '#C7FFDE';
+        bankEl.style.color = "green";
+        bankEl.style.backgroundColor = "#C7FFDE";
     } else {
-        bankEl.style.color = 'red';
-        bankEl.style.backgroundColor = '#FFD1D1';
+        bankEl.style.color = "red";
+        bankEl.style.backgroundColor = "#FFD1D1";
     }
 
     for (let slot in slots){
@@ -98,17 +88,17 @@ function playGame(){
 
     if (winner === true){
         bank = bank + 300;
-        result = 'YOU WIN!';
+        result = "YOU WIN!";
     } else {
         bank = bank - 100;
-        result = 'YOU LOSE!';
+        result = "YOU LOSE!";
     }
 
     render();
 }
 
 function getRandomSlot(){
-    const option = ['coin', 'dollar', 'seven', 'key'];
+    const option = ["coin", "dollar", "seven", "key"];
     const randomIndex = Math.floor(Math.random() * 4)
 
     return option[randomIndex]
