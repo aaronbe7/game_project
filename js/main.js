@@ -11,10 +11,10 @@ let result;
 let winner;
 
 const slotEls = {
-    slot_1: document.querySelector("#slot1-result img"),
-    slot_2: document.querySelector("#slot2-result img"),
-    slot_3: document.querySelector("#slot3-result img"),
-    slot_4: document.querySelector("#slot4-result img"),
+    place_1: document.querySelector("#slot1-result img"),
+    place_2: document.querySelector("#slot2-result img"),
+    place_3: document.querySelector("#slot3-result img"),
+    place_4: document.querySelector("#slot4-result img"),
 }
 
 const bankEl = document.getElementById("bank");
@@ -26,10 +26,10 @@ init();
 
 function init(){
     slots = {
-        slot_1: "seven",
-        slot_2: "seven",
-        slot_3: "seven",
-        slot_4: "seven",
+        place_1: "seven",
+        place_2: "seven",
+        place_3: "seven",
+        place_4: "seven",
     }
     
     bank = 0;
@@ -67,23 +67,23 @@ function render(){
 }
 
 function playGame(){
-    slots.slot_1 = getRandomSlot();
-    slots.slot_2 = getRandomSlot();
-    slots.slot_3 = getRandomSlot();
-    slots.slot_4 = getRandomSlot();
+    slots.place_1 = getRandomSlot();
+    slots.place_2 = getRandomSlot();
+    slots.place_3 = getRandomSlot();
+    slots.place_4 = getRandomSlot();
 
-    if((slots.slot_1 === slots.slot_2 ) && (slots.slot_2 === slots.slot_3)) {
-       winner = true;
-    } else if ((slots.slot_2 === slots.slot_3) && (slots.slot_3 === slots.slot_4)) {
-       winner = true;
-    } else if ((slots.slot_1 === slots.slot_3) && (slots.slot_3 === slots.slot_4)) {
-       winner = true;
-    } else if ((slots.slot_1 === slots.slot_2) && (slots.slot_2 === slots.slot_4)) {
-       winner = true;
-    } else if ((slots.slot_1 === slots.slot_2) && (slots.slot_2 === slots.slot_3) && (slots.slot_3 === slots.slot_4)) {
-       winner = true;
+    if((slots.place_1 === slots.place_2 ) && (slots.place_2 === slots.place_3)) {
+        winner = true;
+    } else if ((slots.place_2 === slots.place_3) && (slots.place_3 === slots.place_4)) {
+        winner = true;
+    } else if ((slots.place_1 === slots.place_3) && (slots.place_3 === slots.place_4)) {
+        winner = true;
+    } else if ((slots.place_1 === slots.place_2) && (slots.place_2 === slots.place_4)) {
+        winner = true;
+    } else if ((slots.place_1 === slots.place_2) && (slots.place_2 === slots.place_3) && (slots.place_3 === slots.place_4)) {
+        winner = true;
     } else {
-       winner = false;
+        winner = false;
     }
 
     if (winner === true){
